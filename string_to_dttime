@@ -1,0 +1,4 @@
+Pyspark string to TimeStamp -
+TestData = TestData.withColumn("orig_ts",TestData.creat_ts_string.astype('Timestamp'))
+TestData = TestData.withColumn("date_time_dtm2",from_unixtime(unix_timestamp(concat(col("date_string"), lit(" "), col("time_string")), 'yyyy-mm-dd HH:mm:ss')).cast('timestamp'))
+
